@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmcast. | You're movie library!</title>
+    <link rel="stylesheet" href="https://unpkg.com/blaze-slider@1.8.0/dist/blaze.css"/>
+    <!--Font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/style.css"/>
+</head>
+<body>
+    <header>
+      <nav class="navigation-section">
+        <img class="logo" src="images/logo.svg" alt="filmcast"/>
+        <ul class="nav-links">
+          <li class="nav-link"><a href="#">Home</a></li>
+          <li class="nav-link"><a href="#">Movies</a></li>
+          <li class="nav-link"><a href="#">Series</a></li>
+          <li class="nav-link"><a href="#">Popular</a></li>
+          <li class="nav-link"><a href="#">My List</a></li>
+        </ul>
+        <div class="nav-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <div class="profile-picture"></div>
+        </div>
+      </nav>
+      <div class="header-slider">
+        <div class="blaze-container">
+          <div class="blaze-track-container">
+            <div class="blaze-track hero-slider">
+              <div class="movie-1">
+                <div class="controls-arrow-btn">
+                  <button class="blaze-prev"><i class="fa-solid fa-angle-left"></i></button>
+                  <button class="blaze-next"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+                <div class="movie-text">
+                  <h1>House of the Dragon</h1>
+                  <p>After the death of their father, two siblings fight for the throne, 
+                    thereby causing a civil war known as the Dance of the Dragons.
+                  </p>
+                  <button class="play-btn">Play<i class="fa-solid fa-play"></i></button><button class="list-btn">Add to Wishlist<i class="fa-solid fa-clipboard-list"></i></button>
+                </div>
+              </div>
+              <div class="movie-2">
+                <div class="controls-arrow-btn">
+                  <button class="blaze-prev"><i class="fa-solid fa-angle-left"></i></button>
+                  <button class="blaze-next"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+                <div class="movie-text">
+                  <h1>Cyberpunk: Edgerunners</h1>
+                  <p>
+                    A Street Kid trying to survive in a technology and body modification-obsessed city of the future. Having everything to lose, he chooses to stay alive by becoming an Edgerunner, a Mercenary outlaw also known as a Cyberpunk.
+                  </p>
+                  <button class="play-btn">Play<i class="fa-solid fa-play"></i></button><button class="list-btn">Add to Wishlist<i class="fa-solid fa-clipboard-list"></i></button>
+                </div>
+              </div>
+              <div class="movie-3">
+                <div class="controls-arrow-btn">
+                  <button class="blaze-prev"><i class="fa-solid fa-angle-left"></i></button>
+                  <button class="blaze-next"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+                <div class="movie-text">
+                  <h1>Squid Game</h1>
+                  <p>
+                    Hundreds of cash-strapped players accept a strange invitation to compete in children's games. Inside, a tempting prize awaits with deadly high stakes. A survival game that has a whopping 45.6 billion-won prize at stake.
+                  </p>
+                  <button class="play-btn">Play<i class="fa-solid fa-play"></i></button><button class="list-btn">Add to Wishlist<i class="fa-solid fa-clipboard-list"></i></button>
+                </div>
+              </div>
+              <div class="movie-4">
+                <div class="controls-arrow-btn">
+                  <button class="blaze-prev"><i class="fa-solid fa-angle-left"></i></button>
+                  <button class="blaze-next"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+                <div class="movie-text">
+                  <h1>Shin Evangelion Gekijôban</h1>
+                  <p>
+                    The fourth and final installment of the Rebuild of Evangelion. Misato and her anti-Nerv group Wille arrive in Paris, a city now red from core-ization. Crew from the flagship Wunder land on a containment tower.
+                  </p>
+                  <button class="play-btn">Play<i class="fa-solid fa-play"></i></button><button class="list-btn">Add to Wishlist<i class="fa-solid fa-clipboard-list"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="blaze-pagination">
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="filmcast-genres">
+        <div class="genre-slider">
+          <div class="title-controls">
+            <div class="title-genre">
+              <span class="line"></span><h1>Popular</h1><span class="line"></span>
+            </div>
+            <div class="controls">
+              <button class="blaze-prev"><i class="fa-solid fa-angle-left"></i></button>
+              <button class="blaze-next"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+          </div>
+          <div class="blaze-container">
+            <div class="blaze-track-container">
+              <div class="blaze-track genre-slider-items">
+                <div>
+                  <img class="movie-image" src="images/edgerunners.jpg" alt="cyberpunk"/>
+                  <h3>Cyberpunk: Edgerunners</h3>
+                  <p>TV-MA | Action, Crime</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/game_of_thrones.png" alt="cyberpunk"/>
+                  <h3>House of the Dragon</h3>
+                  <p>TV-MA | Action, Drama</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/squidgame.jpeg" alt="cyberpunk"/>
+                  <h3>SquidGame</h3>
+                  <p>TV-MA | KDrama, Action</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/evangelion_poster.jpg" alt="evangelion"/>
+                  <h3>Evangelion</h3>
+                  <p>TV-MA | Anime, Crime</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/edgerunners.jpg" alt="cyberpunk"/>
+                  <h3>Cyberpunk: Edgerunners</h3>
+                  <p>TV-MA | Action, Crime</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/edgerunners.jpg" alt="cyberpunk"/>
+                  <h3>Cyberpunk: Edgerunners</h3>
+                  <p>TV-MA | Action, Crime</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/edgerunners.jpg" alt="cyberpunk"/>
+                  <h3>Cyberpunk: Edgerunners</h3>
+                  <p>TV-MA | Action, Crime</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/edgerunners.jpg" alt="cyberpunk"/>
+                  <h3>Cyberpunk: Edgerunners</h3>
+                  <p>TV-MA | Action, Crime</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="genre-slider">
+          <div class="title-controls">
+            <div class="title-genre">
+              <span class="line"></span><h1>Series</h1><span class="line"></span>
+            </div>
+            <div class="controls">
+              <button class="blaze-prev"><i class="fa-solid fa-angle-left"></i></button>
+              <button class="blaze-next"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+          </div>
+          <div class="blaze-container">
+            <div class="blaze-track-container">
+              <div class="blaze-track genre-slider-items">
+                <div>
+                  <img class="movie-image" src="images/edgerunners.jpg" alt="cyberpunk"/>
+                  <h3>Cyberpunk: Edgerunners</h3>
+                  <p>TV-MA | Action, Crime</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/game_of_thrones.png" alt="cyberpunk"/>
+                  <h3>House of the Dragon</h3>
+                  <p>TV-MA | Action, Drama</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/squidgame.jpeg" alt="cyberpunk"/>
+                  <h3>SquidGame</h3>
+                  <p>TV-MA | KDrama, Action</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/evangelion_poster.jpg" alt="evangelion"/>
+                  <h3>Evangelion</h3>
+                  <p>TV-MA | Anime, Crime</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/edgerunners.jpg" alt="cyberpunk"/>
+                  <h3>Cyberpunk: Edgerunners</h3>
+                  <p>TV-MA | Action, Crime</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/edgerunners.jpg" alt="cyberpunk"/>
+                  <h3>Cyberpunk: Edgerunners</h3>
+                  <p>TV-MA | Action, Crime</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/edgerunners.jpg" alt="cyberpunk"/>
+                  <h3>Cyberpunk: Edgerunners</h3>
+                  <p>TV-MA | Action, Crime</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/edgerunners.jpg" alt="cyberpunk"/>
+                  <h3>Cyberpunk: Edgerunners</h3>
+                  <p>TV-MA | Action, Crime</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="genre-slider">
+          <div class="title-controls">
+            <div class="title-genre">
+              <span class="line"></span><h1>Movies</h1><span class="line"></span>
+            </div>
+            <div class="controls">
+              <button class="blaze-prev"><i class="fa-solid fa-angle-left"></i></button>
+              <button class="blaze-next"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+          </div>
+          <div class="blaze-container">
+            <div class="blaze-track-container">
+              <div class="blaze-track genre-slider-items">
+                <div>
+                  <img class="movie-image" src="images/edgerunners.jpg" alt="cyberpunk"/>
+                  <h3>Cyberpunk: Edgerunners</h3>
+                  <p>TV-MA | Action, Crime</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/game_of_thrones.png" alt="cyberpunk"/>
+                  <h3>House of the Dragon</h3>
+                  <p>TV-MA | Action, Drama</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/squidgame.jpeg" alt="cyberpunk"/>
+                  <h3>SquidGame</h3>
+                  <p>TV-MA | KDrama, Action</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/evangelion_poster.jpg" alt="evangelion"/>
+                  <h3>Evangelion</h3>
+                  <p>TV-MA | Anime, Crime</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/edgerunners.jpg" alt="cyberpunk"/>
+                  <h3>Cyberpunk: Edgerunners</h3>
+                  <p>TV-MA | Action, Crime</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/edgerunners.jpg" alt="cyberpunk"/>
+                  <h3>Cyberpunk: Edgerunners</h3>
+                  <p>TV-MA | Action, Crime</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/edgerunners.jpg" alt="cyberpunk"/>
+                  <h3>Cyberpunk: Edgerunners</h3>
+                  <p>TV-MA | Action, Crime</p>
+                </div>
+                <div>
+                  <img class="movie-image" src="images/edgerunners.jpg" alt="cyberpunk"/>
+                  <h3>Cyberpunk: Edgerunners</h3>
+                  <p>TV-MA | Action, Crime</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-information-section">
+        <div class="footer-information">
+          <ul class="about-us">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">About us</a></li>
+          </ul>
+          <ul class="services">
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Series</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+          <ul class="Popular">
+            <li><a href="#">Popular</a></li>
+            <li><a href="#">Recently Released</a></li>
+            <li><a href="#">250 IMDB</a></li>
+            <li><a href="#">Advertise with us</a></li>
+          </ul>
+        </div>
+        <div class="footer-promo">
+          <img src="images/logo.svg" alt="logo"/>
+          <p>
+            Filmcast is the world’s leading 
+            community for creators to share, 
+            grow, and get hired.
+          </p>
+          <div class="social-icons">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-discord"></i>
+            <i class="fa-brands fa-telegram"></i>
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+      <span class="line"></span>
+      <p>© 2020 Filimo. All rights reserved.</p>
+    </footer>
+    <script type="module" src="app.js"></script>
+    <script src="https://unpkg.com/blaze-slider@1.8.0/dist/blaze-slider.min.js"></script>
+</body>
+</html>

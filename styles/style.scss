@@ -9,52 +9,30 @@ $dark-gray-color: #191A1F;
 $light-gray-color: #65666B;
 $medium-gray-color: #2D2D35;
 $red-color: #D22F27;
+$white-gray-color: #B7B7B7;
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/*Stylesheet imports*/
+@import "globals";
+@import "navbar";
+@import "slider_components";
+@import "footer";
 
-body{
-    background: $dark-gray-color;
-    font-family: "Poppins",sans-serif
-}
-
-li,a{
-    list-style: none;
-    text-decoration: none;
-    color: white;
-}
-
-.play-btn{
-    font-size: 0.85rem;
-    cursor: pointer;
-    font-weight: 600;
-    color: white;
-    background: $red-color;
-    border: none;
-    padding: 1em 2em;
-    border-radius: 5px;
-    i{
-        margin-left: 0.3em;
+@media screen and (max-width:40em){
+    html{
+        font-size: 75%;
+    }
+    .nav-links{
+        display: none;
+    }
+    .footer-information-section{
+        .footer-information{
+            display: none;
+        }
+    }
+    .blaze-track.genre-slider-items>*{
+        max-width: 250px;
+        width: 100%;
+        height:450px;
     }
 }
 
-
-.list-btn{
-    font-size: 0.85rem;
-    cursor: pointer;
-    font-weight: 600;
-    color: white;
-    background: $light-gray-color;
-    border: none;
-    padding: 1em 2em;
-    border-radius: 5px;
-    i{
-        margin-left: 0.3em;
-    }
-}
-
-
-@import "header";

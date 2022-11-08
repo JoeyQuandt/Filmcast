@@ -1,0 +1,45 @@
+footer{
+    background: $medium-gray-color;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5em;
+    row-gap: 3.5em;
+    flex-direction: column;
+    .footer-promo{
+        max-width: 500px;
+    }
+    .social-icons>*{
+        background: $light-gray-color;
+        color: $white-gray-color;
+        cursor: pointer;
+        margin: 1em 0;
+        padding: 0.5em;
+        font-size: 1.4rem;
+        align-items: center;
+        text-align: center;
+        border-radius: 50%;
+        
+    }
+    .line{
+        width: 100%;
+        padding: 0.05em;
+        background: $light-gray-color;
+    }
+}
+
+.footer-information-section{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+    .footer-information{
+        display: flex;
+        gap: 5em;
+        ul li{
+            margin: 1em;
+            font-weight: 400;
+        }
+    }
+}

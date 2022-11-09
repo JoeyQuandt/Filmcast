@@ -5,60 +5,25 @@
 .blaze-track.hero-slider>*{
     display: flex;
     transition: width 300ms ease;
+}
+
+.movie{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
     height: 100vh;
 }
 
-.movie-1{
-    background: url("../images/game_of_thrones.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    position: relative;
+.movie img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
 }
 
-.movie-2{
-    background: url("../images/edgerunners.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    position: relative;
-}
-
-.movie-3{
-    background: url("../images/squidgame.jpeg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    position: relative;
-}
-
-.movie-4{
-    background: url("../images/evangelion.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    position: relative;
-}
 
 .controls-arrow-btn{
     margin: auto;
@@ -133,7 +98,6 @@
 .blaze-track.genre-slider-items>*{
     max-width: 350px;
     width: 100%;
-    height:600px;
     display: flex;
     cursor: pointer;
     flex-direction: column;
@@ -141,6 +105,9 @@
     justify-content: center;
     align-items: center;
     transition: width 300ms ease;
+    .genre-text{
+        height: 100%;
+    }
     h3{
         font-size: 1.4rem;
         color: white;
@@ -148,12 +115,12 @@
     }
     p{
         color: $light-gray-color;
+        text-transform: capitalize;
     }
 }
 
 .movie-image{
     width: 100%;
-    height: 100%;
     object-fit: cover;
     border-radius: 8px;
 }

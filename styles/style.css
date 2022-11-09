@@ -56,7 +56,7 @@ li, a {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 2em;
+  padding: 1.5em 1em;
   z-index: 40;
 }
 
@@ -113,59 +113,25 @@ li, a {
 .blaze-track.hero-slider > * {
   display: flex;
   transition: width 300ms ease;
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
   height: 100vh;
 }
 
-.movie-1 {
-  background: url("../images/game_of_thrones.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  position: relative;
-}
-
-.movie-2 {
-  background: url("../images/edgerunners.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  position: relative;
-}
-
-.movie-3 {
-  background: url("../images/squidgame.jpeg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  position: relative;
-}
-
-.movie-4 {
-  background: url("../images/evangelion.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  position: relative;
+.movie img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
 }
 
 .controls-arrow-btn {
@@ -239,7 +205,6 @@ li, a {
 .blaze-track.genre-slider-items > * {
   max-width: 350px;
   width: 100%;
-  height: 600px;
   display: flex;
   cursor: pointer;
   flex-direction: column;
@@ -248,6 +213,9 @@ li, a {
   align-items: center;
   transition: width 300ms ease;
 }
+.blaze-track.genre-slider-items > * .genre-text {
+  height: 100%;
+}
 .blaze-track.genre-slider-items > * h3 {
   font-size: 1.4rem;
   color: white;
@@ -255,11 +223,11 @@ li, a {
 }
 .blaze-track.genre-slider-items > * p {
   color: #65666B;
+  text-transform: capitalize;
 }
 
 .movie-image {
   width: 100%;
-  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 8px;
@@ -358,6 +326,5 @@ footer .line {
   .blaze-track.genre-slider-items > * {
     max-width: 250px;
     width: 100%;
-    height: 450px;
   }
 }/*# sourceMappingURL=style.css.map */

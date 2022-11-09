@@ -8,47 +8,8 @@
     height: 100vh;
 }
 
-.movie-1{
+.movie{
     background: url("../images/game_of_thrones.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    position: relative;
-}
-
-.movie-2{
-    background: url("../images/edgerunners.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    position: relative;
-}
-
-.movie-3{
-    background: url("../images/squidgame.jpeg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    position: relative;
-}
-
-.movie-4{
-    background: url("../images/evangelion.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

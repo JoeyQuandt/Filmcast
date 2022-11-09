@@ -1,11 +1,11 @@
-const header = document.querySelector('.header-slider')
+
 const navBar = document.querySelector("nav")
 const genreSliders = document.querySelectorAll(".genre-slider")
+const header = document.querySelector('.header-slider')
 
 /*Blaze slider*/
 function ActivateSlider(){
     new BlazeSlider(header)
-
     genreSliders.forEach(el => {
     new BlazeSlider(el,{
         all: {
@@ -26,6 +26,9 @@ function ActivateSlider(){
     })
     })
 }
+
+
+
 
 
 /*Scrolling active*/

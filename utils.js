@@ -29,7 +29,10 @@ function ActivateSlider(){
 
 
 
-
+function getMultipleRandom(arr,num){
+    const shuffled = [...arr].sort(()=>0.5-Math.random());
+    return shuffled.slice(0,num)
+  }
 
 /*Scrolling active*/
 window.addEventListener("scroll",function(){
@@ -38,6 +41,6 @@ window.addEventListener("scroll",function(){
     navBar.classList.toggle("navigation-section-scroll-active",windowPosition)
 })
 
-export {ActivateSlider}
+export {ActivateSlider, getMultipleRandom}
 
 

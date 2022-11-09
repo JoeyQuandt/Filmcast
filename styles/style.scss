@@ -15,11 +15,12 @@ $white-gray-color: #B7B7B7;
 @import "globals";
 @import "navbar";
 @import "slider_components";
+@import "details";
 @import "footer";
 
 @media screen and (max-width:40em){
     html{
-        font-size: 75%;
+        font-size: 70%;
     }
     .nav-links{
         display: none;

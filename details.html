@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmcast. | You're movie library!</title>
+    <!--Blaze Slider-->
+    <link rel="stylesheet" href="https://unpkg.com/blaze-slider@1.8.0/dist/blaze.css"/>
+    <!--Font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/style.css"/>
+</head>
+<body>
+    <header class="details-header">
+      <nav class="navigation-section">
+        <img class="logo" src="images/logo.svg" alt="filmcast"/>
+        <ul class="nav-links">
+          <li class="nav-link"><a href="index.html">Home</a></li>
+          <li class="nav-link"><a href="#">Movies</a></li>
+          <li class="nav-link"><a href="#">Series</a></li>
+          <li class="nav-link"><a href="#">Popular</a></li>
+          <li class="nav-link"><a href="#">My List</a></li>
+        </ul>
+        <div class="nav-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <div class="profile-picture"></div>
+        </div>
+      </nav>
+      <img class="details-header-image" src="images/evangelion_cover.jpg" alt="background-image"/>
+        <div class="details-header-information">
+            <img src="images/evangelion.jpg" alt="evangelion" class="details-poster">
+            <div class="details-header-text">
+                <h1>Evangelion: 3.0+1.0 Thrice Upon a Time</h1>
+                <h2>Series</h2>
+                <div class="score">
+                    <p>8.4</p>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+                <div class="details-time">
+                    <p>2h 35m - 08/03/2021(JP)</p>
+                </div>
+                <div class="genres">
+                    <p>Animatie</p>
+                    <p>Actie</p>
+                    <p>Sciencefiction</p>
+                    <p>Drama</p>
+                </div>
+                <p>
+                    In the aftermath of the Fourth Impact, stranded without their Evangelions, Shinji, Asuka, and Rei find refuge in one of the rare pockets of humanity that still exist on the ruined planet Earth. There, each of them live a life far different from their days as an Evangelion pilot. However, the danger to the world is far from over. A new impact is looming on the horizon—one that will prove to be the true end of Evangelion.
+                </p>
+            </div>
+      </div>
+    </header>
+    <main id="details">
+      <div class="details-user-buttons">
+        <button class="play-btn">Play<i class="fa-solid fa-play"></i></button>
+        <button class="list-btn">Add to Wishlist<i class="fa-solid fa-clipboard-list"></i></button>
+        <button class="list-btn your-rate">Your rate<i class="fa-regular fa-star"></i></button>
+      </div>
+
+      <section class="about">
+        <span class="line"></span><h1>Popular All</h1><span class="line"></span>
+        <video src="https://www.youtube.com/watch?v=b9TE3226T-g" alt="trailer"/>
+        <div class="about-text">
+            <div class="summary">
+                <h3>Summery:</h3>
+                <p> In the aftermath of the Fourth Impact, stranded without their Evangelions, Shinji, Asuka, and Rei find refuge in one of the rare pockets of humanity that still exist on the ruined planet Earth. There, each of them live a life far different from their days as an Evangelion pilot. However, the danger to the world is far from over. A new impact is looming on the horizon—one that will prove to be the true end of Evangelion.</p>
+            </div>
+            <div class="creator">
+                <h3>Creator:</h3>
+                <p>Hideaki Anno</p>
+            </div>
+            <div class="cast">
+                <p>Megumi Ogato, Yuko Miyamura, Megumi Hayashibara, Maaya Sakamoto</p>
+            </div>
+        </div>
+      </section>
+    </main>
+    <!--Footer Section-->
+    <footer>
+      <div class="footer-information-section">
+        <div class="footer-information">
+          <ul class="about-us">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">About us</a></li>
+          </ul>
+          <ul class="services">
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Series</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+          <ul class="Popular">
+            <li><a href="#">Popular</a></li>
+            <li><a href="#">Recently Released</a></li>
+            <li><a href="#">250 IMDB</a></li>
+            <li><a href="#">Advertise with us</a></li>
+          </ul>
+        </div>
+        <div class="footer-promo">
+          <img src="images/logo.svg" alt="logo"/>
+          <p>
+            Filmcast is the world’s leading 
+            community for creators to share, 
+            grow, and get hired.
+          </p>
+          <div class="social-icons">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-discord"></i>
+            <i class="fa-brands fa-telegram"></i>
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+      <span class="line"></span>
+      <p>© 2022 Filmcast. All rights reserved.</p>
+    </footer>
+    <script type="module" src="app.js"></script>
+       <!--Javascript blaze import-->
+    <script src="https://unpkg.com/blaze-slider@1.8.0/dist/blaze-slider.min.js"></script>
+</body>
+</html>

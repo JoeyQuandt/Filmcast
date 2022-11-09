@@ -160,11 +160,13 @@ li, a {
 .movie-text h1 {
   font-size: 3.5rem;
   margin-bottom: 0.3em;
+  text-shadow: 0 1px 0 black;
 }
 .movie-text p {
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5em;
+  text-shadow: 0 1px 0 black;
 }
 .movie-text button {
   margin-top: 1.5em;
@@ -268,6 +270,90 @@ li, a {
   border-radius: 50%;
 }
 
+.details-header {
+  position: relative;
+  height: 75vh;
+  display: grid;
+  place-items: center;
+}
+
+.details-header-information img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.details-header-information {
+  display: flex;
+  gap: 2.5em;
+  margin: auto;
+  width: 65%;
+  color: white;
+  padding: 1em;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.details-header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75em;
+  margin-top: 7.5em;
+  width: 100%;
+}
+.details-header-text h1 {
+  font-size: 2.5rem;
+}
+.details-header-text h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.details-header-text .score {
+  font-size: 1.5rem;
+  color: #FCC537;
+  display: flex;
+  align-items: center;
+}
+.details-header-text .details-time {
+  display: flex;
+  gap: 0.5em;
+  font-size: 1.3rem;
+}
+.details-header-text .genres {
+  display: flex;
+  gap: 0.65em;
+}
+.details-header-text .genres p {
+  background: #65666B;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  border-radius: 7.5px;
+}
+
+#details {
+  margin: auto;
+  background: blue;
+  width: 65%;
+}
+
+.details-header-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+  filter: blur(10px) brightness(50%);
+}
+
+#details {
+  height: 100vh;
+}
+
 footer {
   background: #2D2D35;
   color: white;
@@ -315,7 +401,7 @@ footer .line {
 
 @media screen and (max-width: 40em) {
   html {
-    font-size: 75%;
+    font-size: 70%;
   }
   .nav-links {
     display: none;

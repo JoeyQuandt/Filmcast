@@ -391,6 +391,7 @@ li, a {
 
 .about-information iframe {
   width: 100%;
+  height: 600px;
   border: none;
   border-radius: 8px;
   flex: 2;
@@ -552,5 +553,8 @@ footer .line {
   }
   .about-information {
     flex-wrap: wrap;
+  }
+  .about-information iframe {
+    height: 350px;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -103,6 +103,7 @@
 
 .about-information iframe{
     width: 100%;
+    height: 600px;
     border: none;
     border-radius: 8px;
     flex: 2;
@@ -193,6 +194,7 @@
         }
     }
 }
+
 
 .no-reviews{
     color: $light-gray-color;

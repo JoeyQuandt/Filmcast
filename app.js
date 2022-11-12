@@ -7,8 +7,8 @@ const popularAllGenre = document.getElementById("popular")
 const popularTv = document.getElementById("popular-tv")
 const popularMovie = document.getElementById("popular-movie")
 
-const id= "49046"
-const typeOfMedia= "movie"
+const id= "37854"
+const typeOfMedia= "tv"
 
 
 /*Fetch Api's*/
@@ -104,7 +104,9 @@ function renderDetails(data){
       </div>
   </div>
   `
+  document.getElementById("tv-season-slider").style.display="none"
   if(typeOfMedia==="tv"){
+    document.getElementById("tv-season-slider").style.display="block"
     data.seasons.forEach(season=>{
       document.getElementById("seasons").innerHTML+=
       `
@@ -169,7 +171,7 @@ function renderDetails(data){
         <div class="profile-review-score">
           <span class="divider"></span>
           <div class="review-score">
-            <h3>Score:${review.author_details.rating}</h3>
+            <h3>Score:${review.author_details.rating ? review.author_details.rating : "No Score" }</h3>
             <p>${review.created_at.substr(0,10)}</p>
           </div>
         </div>

@@ -40,5 +40,8 @@ $white-gray-color: #B7B7B7;
     .about-information{
         flex-wrap: wrap;
     }
+    .about-information iframe{
+        height: 350px;
+    }
 }
 

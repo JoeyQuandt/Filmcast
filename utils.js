@@ -30,7 +30,23 @@ function ActivateSlider(){
 
 function ActivateDetailSlider(){
     detailSliders.forEach(el=>{
-        new BlazeSlider(el)
+        new BlazeSlider(el,{
+            all:{
+                enableAutoplay: false,
+                slidesToScroll: 3,
+                slidesToShow: 5,
+                transitionDuration: 300
+            },
+            "(max-width: 900px)": {
+                slidesToShow: 2,
+                slidesToShow: 2,
+                slidesGap: "40px"
+            },
+            "(max-width: 500px)": {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        })
     })
 }
 

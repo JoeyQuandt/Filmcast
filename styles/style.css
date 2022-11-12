@@ -213,7 +213,7 @@ li, a {
   text-align: center;
   justify-content: center;
   align-items: center;
-  transition: width 300ms ease;
+  transition: all 300ms ease;
 }
 .blaze-track.genre-slider-items > * .genre-text {
   height: 100%;
@@ -243,6 +243,21 @@ li, a {
   justify-content: space-between;
 }
 
+.seasons {
+  width: 100%;
+}
+
+.season-slider {
+  width: 100%;
+}
+
+.season-title-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8em;
+  margin-bottom: 1.5em;
+}
+
 .title-genre {
   color: white;
   display: flex;
@@ -270,17 +285,33 @@ li, a {
   border-radius: 50%;
 }
 
+.details-header-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+  filter: blur(10px) brightness(50%);
+  z-index: -5;
+}
+
 .details-header {
   position: relative;
-  height: 75vh;
   display: grid;
   place-items: center;
+}
+
+.details-wrapper {
+  min-height: 75vh;
 }
 
 .details-header-information img {
   width: 100%;
   max-width: 400px;
   height: auto;
+  margin-top: 5em;
   border-radius: 8px;
 }
 
@@ -290,7 +321,6 @@ li, a {
   margin: auto;
   width: 65%;
   color: white;
-  padding: 1em;
   justify-content: center;
   align-items: center;
   z-index: 1;
@@ -335,23 +365,127 @@ li, a {
 
 #details {
   margin: auto;
-  background: blue;
   width: 65%;
 }
 
-.details-header-image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 50% 50%;
-     object-position: 50% 50%;
-  filter: blur(10px) brightness(50%);
+.details-user-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -1.5em;
+  z-index: 1;
+}
+.details-user-buttons .play-list {
+  display: flex;
+  gap: 1em;
 }
 
-#details {
-  height: 100vh;
+.about {
+  margin-block: 5em;
+}
+
+.about-information {
+  display: flex;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.about-information iframe {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  flex: 2;
+}
+
+.about-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.75em;
+  color: white;
+  font-weight: 400;
+}
+.about-text h3 {
+  color: #65666B;
+  font-weight: 400;
+  font-size: 1.7rem;
+}
+
+.seasons-information {
+  display: flex;
+  justify-content: space-between;
+}
+
+.seasons {
+  display: flex;
+  flex-direction: column;
+}
+
+.season {
+  text-align: center;
+  color: white;
+}
+.season img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.details-sliders {
+  display: flex;
+}
+
+.reviews {
+  margin-block: 10em;
+}
+
+.review {
+  display: flex;
+  margin-block: 2em;
+  padding: 2.5em 1em;
+  justify-content: space-between;
+  align-items: center;
+  background: #2D2D35;
+  border-radius: 10px;
+}
+.review .profile-details {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.review .profile-details img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+.review .profile-details .profile-details-text {
+  color: white;
+  display: -webkit-box;
+  font-size: 0.95rem;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.review .profile-details .profile-details-text h3 {
+  color: #65666B;
+}
+.review .profile-review-score {
+  display: flex;
+  text-align: center;
+  color: white;
+  gap: 1em;
+}
+.review .profile-review-score .divider {
+  background: white;
+  padding: 0.09em;
+}
+.review .profile-review-score h3 {
+  color: #FCC537;
+}
+
+.no-reviews {
+  color: #65666B;
+  padding-block: 5em;
 }
 
 footer {
@@ -412,5 +546,11 @@ footer .line {
   .blaze-track.genre-slider-items > * {
     max-width: 250px;
     width: 100%;
+  }
+  .details-header-information img {
+    display: none;
+  }
+  .about-information {
+    flex-wrap: wrap;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -34,5 +34,11 @@ $white-gray-color: #B7B7B7;
         max-width: 250px;
         width: 100%;
     }
+    .details-header-information img{
+        display: none;
+    }
+    .about-information{
+        flex-wrap: wrap;
+    }
 }
 

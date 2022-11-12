@@ -2,6 +2,7 @@
 const navBar = document.querySelector("nav")
 const genreSliders = document.querySelectorAll(".genre-slider")
 const header = document.querySelector('.header-slider')
+const detailSliders = document.querySelectorAll(".season-slider")
 
 /*Blaze slider*/
 function ActivateSlider(){
@@ -27,7 +28,11 @@ function ActivateSlider(){
     })
 }
 
-
+function ActivateDetailSlider(){
+    detailSliders.forEach(el=>{
+        new BlazeSlider(el)
+    })
+}
 
 function getMultipleRandom(arr,num){
     const shuffled = [...arr].sort(()=>0.5-Math.random());
@@ -41,6 +46,6 @@ window.addEventListener("scroll",function(){
     navBar.classList.toggle("navigation-section-scroll-active",windowPosition)
 })
 
-export {ActivateSlider, getMultipleRandom}
+export {ActivateSlider, getMultipleRandom, ActivateDetailSlider}
 
 

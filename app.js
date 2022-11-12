@@ -1,62 +1,52 @@
-import { ActivateSlider, getMultipleRandom} from "./utils.js";
+import { ActivateSlider, ActivateDetailSlider} from "./utils.js";
+import { renderSliders } from "./render.js";
+
+const sPath = window.location.pathname
+const sPage = sPath.substring(sPath.lastIndexOf('/')+1)
 const popularAllGenre = document.getElementById("popular")
 const popularTv = document.getElementById("popular-tv")
 const popularMovie = document.getElementById("popular-movie")
-const heroSlider = document.getElementById("hero-slider")
+
+const id= "49046"
+const typeOfMedia= "movie"
 
 
-
+/*Fetch Api's*/
 async function showPopularAllData(type,htmlType){
   const resp = await fetch(`https://api.themoviedb.org/3/trending/${type}/week?api_key=fa940f6d4f0f73fb45419d96bae71b25`)
   const data = await resp.json()
-  render(data.results,htmlType)
-  console.log(data)
+  renderSliders(data.results,htmlType)
   ActivateSlider()
 }
 
+async function getSingleMovieShow(){
+  const resp = await fetch(`https://api.themoviedb.org/3/${typeOfMedia}/${id}?api_key=fa940f6d4f0f73fb45419d96bae71b25&language=en-US`)
+  const data = await resp.json()
+  renderDetails(data)
+  ActivateDetailSlider()
+}
 
-showPopularAllData("movie",popularMovie)
-showPopularAllData("all",popularAllGenre)
-showPopularAllData("tv",popularTv)
+async function getSingleMovieShowDetails(id,getData){
+  const resp = await fetch(`https://api.themoviedb.org/3/${typeOfMedia}/${id}/${getData}?api_key=fa940f6d4f0f73fb45419d96bae71b25&language=en-US`)
+  const data = await resp.json()
+  ActivateDetailSlider()
+  return data
+}
 
 
 
-function render(data,htmlType){
-  let popularAll =""
-  data.forEach(popularMovieSerie => {
-
-    popularAll+=
-    `
-    <div>
-      <img class="movie-image" alt="${popularMovieSerie.title}" src="https://image.tmdb.org/t/p/w500/${popularMovieSerie.poster_path}" alt="cyberpunk"/>
-      <div class="genre-text">
-        <h3>${popularMovieSerie.title ? popularMovieSerie.title : popularMovieSerie.name}</h3>
-        <p>${popularMovieSerie.media_type} | Rating: ${popularMovieSerie.vote_average.toFixed(1)}</p>
-      </div>
-    </div>
-    `
-    htmlType.innerHTML=popularAll
-  });
-  if(htmlType===popularTv){
-    let randomPopular= getMultipleRandom(data,4)
-    let hero=""
-    randomPopular.forEach(slider=>{
-      hero+=
-      `
-      <div class="movie">
-        <img class="movie-background" src="https://image.tmdb.org/t/p/original/${slider.backdrop_path}" alt="background">
-        <div class="movie-text">
-          <h1>${slider.title ? slider.title : slider.name}</h1>
-          <p>
-            ${slider.overview}
-          </p>
-          <button class="play-btn">Play<i class="fa-solid fa-play"></i></button><button class="list-btn">Add to Wishlist<i class="fa-solid fa-clipboard-list"></i></button>
-        </div>
-      </div>
-      `
-      heroSlider.innerHTML=hero
-    })
-
+function render(){
+  if(sPage==="index.html"){
+    Promise.all([
+      showPopularAllData("all",popularAllGenre),
+      showPopularAllData("movie",popularMovie),
+      showPopularAllData("tv",popularTv)
+    ])
+  }
+  else if(sPage==="details.html"){
+    Promise.all([
+      getSingleMovieShow()
+    ])
   }
 }
 
@@ -64,8 +54,140 @@ function render(data,htmlType){
 
 
 
+function renderDetails(data){
+  console.log(data)
+  document.getElementById("details-wrapper").innerHTML=
+  `
+  <img class="details-header-image" src="https://image.tmdb.org/t/p/original/${data.backdrop_path}" alt="background-image"/>
+  <div class="details-header-information">
+    <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="poster image" class="details-poster">
+    <div class="details-header-text">
+      <h1>${data.name? data.name : data.title}</h1>
+      <h2>${typeOfMedia}</h2>
+      <div class="score">
+          <p>${data.vote_average.toFixed(1)}</p>
+      </div>
+      <div class="details-time">
+          <p>${data.episode_run_time ? data.episode_run_time : data.runtime}m | ${data.first_air_date ? data.first_air_date : data.release_date}</p>
+      </div>
+      <div id="genres" class="genres">
+      </div>
+      <p>
+          ${data.overview}
+      </p>
+    </div>
+  </div>
+  `
+  data.genres.forEach(genre=>{
+    document.getElementById("genres").innerHTML+=
+    `<p>${genre.name}</p>`
+  })
+
+  document.getElementById("about-information").innerHTML=
+  `
+  <iframe id="trailer"
+  src="">
+  </iframe>
+  <div class="about-text">
+      <div class="details">
+        <h3>Original Name</h3>
+        <p>${data.original_name ? data.original_name : data.original_title}</p>
+      </div>
+      <div class="details">
+        <h3>Summary</h3>
+        <p>${data.overview}</p>
+      </div>
+      <div class="details">
+        <h3>Cast</h3>
+        <div id="details-cast">
+        </div>
+      </div>
+  </div>
+  `
+  if(typeOfMedia==="tv"){
+    data.seasons.forEach(season=>{
+      document.getElementById("seasons").innerHTML+=
+      `
+      <div>
+        <img class="movie-image" alt="${season.name}" src="https://image.tmdb.org/t/p/w500/${season.poster_path}"/>
+        <div class="genre-text">
+          <h3>Season: ${season.season_number}</h3>
+        </div>
+      </div>
+      `
+    })
+  }
 
 
+  getSingleMovieShowDetails(data.id,"/videos").then((data)=>{
+    const trailer = data.results[0].key
+    document.getElementById("trailer").src=`https://www.youtube.com/embed/${trailer}`
+  })
+
+
+  getSingleMovieShowDetails(data.id,"/credits").then((data)=>{
+    const castArray = data.cast
+    castArray.forEach(castMember=>{
+      document.getElementById("details-cast").innerHTML+=
+      `<p>${castMember.name}</p>`
+    })
+  })
+
+  getSingleMovieShowDetails(data.id,"/recommendations").then((data)=>{
+    const similarArray = data.results
+    similarArray.forEach(similarShow=>{
+      document.getElementById("similar").innerHTML+=
+      `
+      <div>
+        <img class="movie-image" alt="${similarShow.name}" src="https://image.tmdb.org/t/p/w500/${similarShow.poster_path}"/>
+        <div class="genre-text">
+          <h3>${similarShow.name ? similarShow.name : similarShow.title}</h3>
+        </div>
+      </div>
+      `
+    })
+  })
+
+  getSingleMovieShowDetails(data.id,"/reviews").then((data)=>{
+
+    const reviewArray = data.results
+
+    if(Object.keys(reviewArray).length){
+      reviewArray.forEach(review=>{
+        const profileImage = review.author_details.avatar_path ? `https://image.tmdb.org/t/p/w500/${review.author_details.avatar_path}` : "images/profile.png"
+  
+        document.getElementById("reviews-content").innerHTML+=
+        `
+        <div class="review">
+        <div class="profile-details">
+          <img src="${profileImage}" alt="profile"/>
+          <div class="profile-details-text">
+            <h3>${review.author}</h3>
+            <p>${review.content}</p>
+          </div>
+        </div>
+        <div class="profile-review-score">
+          <span class="divider"></span>
+          <div class="review-score">
+            <h3>Score:${review.author_details.rating}</h3>
+            <p>${review.created_at.substr(0,10)}</p>
+          </div>
+        </div>
+      </div>  
+        `
+      })
+    }else{
+      document.getElementById("reviews-content").innerHTML=
+      `
+      <div class="no-reviews">
+        <h1>We don't have any reviews</h1>
+      </div>
+      `
+    }
+  })
+}
+
+render()
 
 
 

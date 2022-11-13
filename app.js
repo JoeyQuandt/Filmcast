@@ -36,7 +36,7 @@ async function getSingleMovieShowDetails(id,getData){
 
 
 function render(){
-  if(sPage==="index.html"){
+  if(sPage==="index.html" || sPage==="/"){
     Promise.all([
       showPopularAllData("all",popularAllGenre),
       showPopularAllData("movie",popularMovie),

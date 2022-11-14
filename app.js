@@ -7,8 +7,8 @@ const popularAllGenre = document.getElementById("popular")
 const popularTv = document.getElementById("popular-tv")
 const popularMovie = document.getElementById("popular-movie")
 
-const id= "37854"
-const typeOfMedia= "tv"
+const retrievedmovieSerieData = JSON.parse(localStorage.getItem('movieSerieData'));
+
 
 
 /*Fetch Api's*/
@@ -19,19 +19,20 @@ async function showPopularAllData(type,htmlType){
   ActivateSlider()
 }
 
-async function getSingleMovieShow(){
+async function getSingleMovieShow(id,typeOfMedia){
   const resp = await fetch(`https://api.themoviedb.org/3/${typeOfMedia}/${id}?api_key=fa940f6d4f0f73fb45419d96bae71b25&language=en-US`)
   const data = await resp.json()
-  renderDetails(data)
+  renderDetails(data,typeOfMedia)
   ActivateDetailSlider()
 }
 
-async function getSingleMovieShowDetails(id,getData){
+async function getSingleMovieShowDetails(id,getData,typeOfMedia){
   const resp = await fetch(`https://api.themoviedb.org/3/${typeOfMedia}/${id}/${getData}?api_key=fa940f6d4f0f73fb45419d96bae71b25&language=en-US`)
   const data = await resp.json()
   ActivateDetailSlider()
   return data
 }
+
 
 
 
@@ -45,7 +46,7 @@ function render(){
   }
   else if(sPage==="details.html"){
     Promise.all([
-      getSingleMovieShow()
+      getSingleMovieShow(retrievedmovieSerieData.id,retrievedmovieSerieData.type)
     ])
   }
 }
@@ -53,9 +54,7 @@ function render(){
 
 
 
-
-function renderDetails(data){
-  console.log(data)
+function renderDetails(data,typeOfMedia){
   document.getElementById("details-wrapper").innerHTML=
   `
   <img class="details-header-image" src="https://image.tmdb.org/t/p/original/${data.backdrop_path}" alt="background-image"/>
@@ -121,13 +120,13 @@ function renderDetails(data){
   }
 
 
-  getSingleMovieShowDetails(data.id,"/videos").then((data)=>{
+  getSingleMovieShowDetails(data.id,"/videos",typeOfMedia).then((data)=>{
     const trailer = data.results[0].key
     document.getElementById("trailer").src=`https://www.youtube.com/embed/${trailer}`
   })
 
 
-  getSingleMovieShowDetails(data.id,"/credits").then((data)=>{
+  getSingleMovieShowDetails(data.id,"/credits",typeOfMedia).then((data)=>{
     const castArray = data.cast
     castArray.forEach(castMember=>{
       document.getElementById("details-cast").innerHTML+=
@@ -135,13 +134,13 @@ function renderDetails(data){
     })
   })
 
-  getSingleMovieShowDetails(data.id,"/recommendations").then((data)=>{
+  getSingleMovieShowDetails(data.id,"/recommendations",typeOfMedia).then((data)=>{
     const similarArray = data.results
     similarArray.forEach(similarShow=>{
       document.getElementById("similar").innerHTML+=
       `
       <div>
-        <img class="movie-image" alt="${similarShow.name}" src="https://image.tmdb.org/t/p/w500/${similarShow.poster_path}"/>
+        <img data-id="${similarShow.id}" data-type="${typeOfMedia}" class="movie-image" alt="${similarShow.name}" src="https://image.tmdb.org/t/p/w500/${similarShow.poster_path}"/>
         <div class="genre-text">
           <h3>${similarShow.name ? similarShow.name : similarShow.title}</h3>
         </div>
@@ -150,7 +149,7 @@ function renderDetails(data){
     })
   })
 
-  getSingleMovieShowDetails(data.id,"/reviews").then((data)=>{
+  getSingleMovieShowDetails(data.id,"/reviews",typeOfMedia).then((data)=>{
 
     const reviewArray = data.results
 

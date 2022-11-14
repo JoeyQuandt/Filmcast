@@ -287,6 +287,7 @@ li, a {
 
 .details-header-image {
   position: absolute;
+  left: 0;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -304,7 +305,7 @@ li, a {
 }
 
 .details-wrapper {
-  min-height: 75vh;
+  min-height: 85vh;
 }
 
 .details-header-information img {
@@ -340,6 +341,7 @@ li, a {
 .details-header-text h2 {
   font-size: 1.5rem;
   font-weight: 400;
+  text-transform: capitalize;
 }
 .details-header-text .score {
   font-size: 1.5rem;

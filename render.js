@@ -4,16 +4,31 @@ const heroSlider = document.getElementById("hero-slider")
 const popularAllGenre = document.getElementById("popular")
 const popularTv = document.getElementById("popular-tv")
 const popularMovie = document.getElementById("popular-movie")
+const movieSerieData = {
+ 'id':"",
+ 'type':""
+}
+
+
+
+document.addEventListener("click",function(e){
+  if(e.target.dataset.id){
+    location.href = 'details.html';
+    movieSerieData.id=e.target.dataset.id
+    movieSerieData.type=e.target.dataset.type
+
+    localStorage.setItem('movieSerieData', JSON.stringify(movieSerieData));
+  }
+})
 
 
 function renderSliders(data,htmlType){
     let popularAll =""
     data.forEach(popularMovieSerie => {
-  
       popularAll+=
       `
       <div>
-        <img class="movie-image" alt="${popularMovieSerie.title}" src="https://image.tmdb.org/t/p/w500/${popularMovieSerie.poster_path}" alt="cyberpunk"/>
+        <img data-id="${popularMovieSerie.id}" data-type=${popularMovieSerie.media_type} class="movie-image" alt="${popularMovieSerie.title}" src="https://image.tmdb.org/t/p/w500/${popularMovieSerie.poster_path}" alt="cyberpunk"/>
         <div class="genre-text">
           <h3>${popularMovieSerie.title ? popularMovieSerie.title : popularMovieSerie.name}</h3>
           <p>${popularMovieSerie.media_type} | Rating: ${popularMovieSerie.vote_average.toFixed(1)}</p>
@@ -35,7 +50,7 @@ function renderSliders(data,htmlType){
             <p>
               ${slider.overview}
             </p>
-            <button class="play-btn">Play<i class="fa-solid fa-play"></i></button><button class="list-btn">Add to Wishlist<i class="fa-solid fa-clipboard-list"></i></button>
+            <button data-id="${slider.id}" data-type=${slider.media_type} class="play-btn">Play<i class="fa-solid fa-play"></i></button><button class="list-btn">Add to Wishlist<i class="fa-solid fa-clipboard-list"></i></button>
           </div>
         </div>
         `

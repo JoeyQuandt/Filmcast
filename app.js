@@ -96,11 +96,6 @@ function renderDetails(data,typeOfMedia){
         <h3>Summary</h3>
         <p>${data.overview}</p>
       </div>
-      <div class="details">
-        <h3>Cast</h3>
-        <div id="details-cast">
-        </div>
-      </div>
   </div>
   `
   document.getElementById("tv-season-slider").style.display="none"
@@ -128,9 +123,17 @@ function renderDetails(data,typeOfMedia){
 
   getSingleMovieShowDetails(data.id,"/credits",typeOfMedia).then((data)=>{
     const castArray = data.cast
+    console.log(castArray)
     castArray.forEach(castMember=>{
+      const castImage = castMember.profile_path ? `https://image.tmdb.org/t/p/w500/${castMember.profile_path }` : "images/profile.png"
       document.getElementById("details-cast").innerHTML+=
-      `<p>${castMember.name}</p>`
+      `
+      <div>
+        <img class="cast-image" src=${castImage} alt="cast member"/>
+        <h3>${castMember.name}</h3>
+        <p>${castMember.character}</p>
+      </div>
+      `
     })
   })
 
@@ -161,7 +164,7 @@ function renderDetails(data,typeOfMedia){
         `
         <div class="review">
         <div class="profile-details">
-          <img src="${profileImage}" alt="profile"/>
+          <img src="${profileImage.includes("avatar") ? "images/profile.png" : profileImage}" alt="profile"/>
           <div class="profile-details-text">
             <h3>${review.author}</h3>
             <p>${review.content}</p>

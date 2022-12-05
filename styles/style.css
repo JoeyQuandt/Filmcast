@@ -235,6 +235,14 @@ li, a {
   border-radius: 8px;
 }
 
+.cast-image {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+
 .title-controls {
   display: flex;
   align-items: center;

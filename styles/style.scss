@@ -34,8 +34,8 @@ $white-gray-color: #B7B7B7;
         max-width: 250px;
         width: 100%;
     }
-    .details-header-information img{
-        display: none;
+    .details-header-information{
+        flex-wrap: wrap;
     }
     .about-information{
         flex-wrap: wrap;

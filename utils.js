@@ -5,7 +5,6 @@ const detailSliders = document.querySelectorAll(".season-slider");
 
 /*Blaze slider*/
 function ActivateSlider() {
-  new BlazeSlider(header);
   genreSliders.forEach((el) => {
     new BlazeSlider(el, {
       all: {
@@ -25,6 +24,10 @@ function ActivateSlider() {
       },
     });
   });
+}
+
+function ActiveHeroSlider() {
+  new BlazeSlider(header);
 }
 
 function ActivateDetailSlider() {
@@ -61,4 +64,9 @@ window.addEventListener("scroll", function () {
   navBar.classList.toggle("navigation-section-scroll-active", windowPosition);
 });
 
-export { ActivateSlider, getMultipleRandom, ActivateDetailSlider };
+export {
+  ActivateSlider,
+  getMultipleRandom,
+  ActivateDetailSlider,
+  ActiveHeroSlider,
+};

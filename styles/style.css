@@ -314,6 +314,8 @@ li, a {
 
 .details-wrapper {
   min-height: 85vh;
+  max-width: 65%;
+  margin: auto;
 }
 
 .details-header-information img {
@@ -327,8 +329,7 @@ li, a {
 .details-header-information {
   display: flex;
   gap: 2.5em;
-  margin: auto;
-  width: 65%;
+  width: 100%;
   color: white;
   justify-content: center;
   align-items: center;
@@ -558,8 +559,8 @@ footer .line {
     max-width: 250px;
     width: 100%;
   }
-  .details-header-information img {
-    display: none;
+  .details-header-information {
+    flex-wrap: wrap;
   }
   .about-information {
     flex-wrap: wrap;

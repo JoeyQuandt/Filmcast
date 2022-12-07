@@ -11,6 +11,7 @@ const sPage = sPath.substring(sPath.lastIndexOf("/") + 1);
 const popularAllGenre = document.getElementById("popular");
 const popularTv = document.getElementById("popular-tv");
 const popularMovie = document.getElementById("popular-movie");
+const loader = document.getElementById("loading");
 
 const retrievedmovieSerieData = JSON.parse(
   localStorage.getItem("movieSerieData")
@@ -54,7 +55,9 @@ function render() {
 }
 
 window.addEventListener("DOMContentLoaded", (e) => {
-  console.log("DOM HAS LOADED");
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, "600");
 });
 
 render();

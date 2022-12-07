@@ -1,7 +1,19 @@
+import lottieWeb from "https://cdn.skypack.dev/lottie-web";
 const navBar = document.querySelector("nav");
 const genreSliders = document.querySelectorAll(".genre-slider");
 const header = document.querySelector(".header-slider");
 const detailSliders = document.querySelectorAll(".season-slider");
+const loadingIcon = document.getElementById("loading-icon");
+
+/*Loading animation*/
+lottieWeb.loadAnimation({
+  container: loadingIcon,
+  path: "https://maxst.icons8.com/vue-static/landings/animated-icons/icons/cinema/cinema.json",
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  name: "Animation",
+});
 
 /*Blaze slider*/
 function ActivateSlider() {

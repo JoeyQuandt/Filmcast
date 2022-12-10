@@ -5,6 +5,7 @@ import {
 } from "./utils.js";
 import { renderSliders } from "./render.js";
 import { renderDetails } from "./renderDetails.js";
+import MOVIE_API_KEY from "./apikey.js";
 
 const sPath = window.location.pathname;
 const sPage = sPath.substring(sPath.lastIndexOf("/") + 1);
@@ -20,7 +21,7 @@ const retrievedmovieSerieData = JSON.parse(
 /*Fetch Api's*/
 async function showPopularAllData(type, htmlType) {
   const resp = await fetch(
-    `https://api.themoviedb.org/3/trending/${type}/week?api_key=fa940f6d4f0f73fb45419d96bae71b25`
+    `https://api.themoviedb.org/3/trending/${type}/week?api_key=${MOVIE_API_KEY}`
   );
   const data = await resp.json();
   renderSliders(data.results, htmlType);
@@ -30,7 +31,7 @@ async function showPopularAllData(type, htmlType) {
 
 async function getSingleMovieShow(id, typeOfMedia) {
   const resp = await fetch(
-    `https://api.themoviedb.org/3/${typeOfMedia}/${id}?api_key=fa940f6d4f0f73fb45419d96bae71b25&language=en-US`
+    `https://api.themoviedb.org/3/${typeOfMedia}/${id}?api_key=${MOVIE_API_KEY}&language=en-US`
   );
   const data = await resp.json();
   renderDetails(data, typeOfMedia);

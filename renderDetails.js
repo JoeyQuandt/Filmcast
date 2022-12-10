@@ -1,8 +1,9 @@
 import { ActivateDetailSlider } from "./utils.js";
+import MOVIE_API_KEY from "./apikey.js";
 
 async function getSingleMovieShowDetails(id, getData, typeOfMedia) {
   const resp = await fetch(
-    `https://api.themoviedb.org/3/${typeOfMedia}/${id}/${getData}?api_key=fa940f6d4f0f73fb45419d96bae71b25&language=en-US`
+    `https://api.themoviedb.org/3/${typeOfMedia}/${id}/${getData}?api_key=${MOVIE_API_KEY}&language=en-US`
   );
   const data = await resp.json();
   ActivateDetailSlider();
